@@ -1,0 +1,39 @@
+ {
+    "fields": [
+      {
+        "type": "select",
+        "name": "ageGroup",
+        "label": "Age Group",
+        "options": ["Infant", "Child", "Teenager", "Young Adult", "Adult", "Senior"]
+      },
+      {
+        "type": "select",
+        "name": "ageRange",
+        "label": "Age Range",
+        "options": [
+          "0-2 years",
+          "3-12 years",
+          "13-19 years",
+          "20-39 years",
+          "40-59 years",
+          "60+ years"
+        ]
+      },
+      {
+        "type": "datepicker",
+        "name": "startDate",
+        "label": "Start Date"
+      },
+      {
+        "type": "datepicker",
+        "name": "endDate",
+        "label": "End Date"
+      },
+      {
+        "type": "number",
+        "name": "duration",
+        "label": "Duration (days)"
+      }
+    ]
+  }
+  

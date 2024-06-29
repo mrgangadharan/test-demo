@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      <form [formGroup]="form">
+        <div *ngIf="formFields.length" style="    display: flex;
+          gap: 3%;
+          padding-top: 30px;">
+          <div *ngFor="let field of formFields">
+            <mat-form-field class="full-width" *ngIf="field.type === 'select'">
+              <mat-label>{{ field.label }}</mat-label>
+              <mat-select [formControlName]="field.name">
+                <mat-option *ngFor="let option of field.options" [value]="option">
+                  {{ option }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="full-width" *ngIf="field.type === 'datepicker' && field.name == 'startDate'">
+              <input matInput [matDatepicker]="startDate" [formControlName]="field.name" [placeholder]="field.label">
+              <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+              <mat-datepicker id="field.name" #startDate></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="full-width" *ngIf="field.type === 'datepicker' && field.name == 'endDate'">
+              <input matInput [matDatepicker]="endDate" [formControlName]="field.name" [placeholder]="field.label">
+              <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+              <mat-datepicker id="field.name" #endDate></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="full-width" *ngIf="field.type === 'number'">
+              <input matInput [formControlName]="field.name" [placeholder]="field.label">
+            </mat-form-field>
+
+
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
